@@ -1,2 +1,17 @@
-# base_defense_game-LP1_project
-This project is the final assignment for the Programming Language I course at UFRN. The chosen project was the development of a base defense game using the C++ programming language.
+# Base Defense
+
+C++ Developed Project Using Raylib
+
+## Dependences
+
+- MSYS2 UCRT64
+- Raylib 5.5
+- GCC 15+
+
+## Compile
+
+g++ the_invasion.cpp -o the_invasion.exe -I/ucrt64/include -L/ucrt64/lib -lraylib
+
+## Controls
+
+Arrow Keys moves the player.
