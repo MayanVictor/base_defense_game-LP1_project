@@ -1,0 +1,20 @@
+# Executáveis
+*.exe
+
+# Objetos
+*.o
+*.obj
+
+# Debug
+*.pdb
+*.ilk
+
+# Banco do VS Code
+.vscode/*.db
+
+# Cache
+.vscode/ipch
+
+# Build
+build/
+bin/
