@@ -6,9 +6,10 @@
             "type": "shell",
             "command": "C:/msys64/ucrt64/bin/g++.exe",
             "args": [
-                "${fileBasename}",
+                "the_invasion.cpp",
+                "game.cpp",
                 "-o",
-                "${fileBasenameNoExtension}.exe",
+                "the_invasion.exe",
                 "-I/ucrt64/include",
                 "-L/ucrt64/lib",
                 "-lraylib"

@@ -5,7 +5,7 @@
             "name": "Executar Raylib",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "program": "${workspaceFolder}\\the_invasion.exe",
             "cwd": "${fileDirname}",
             "externalConsole": true,
             "MIMode": "gdb",
