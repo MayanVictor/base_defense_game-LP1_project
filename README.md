@@ -10,8 +10,10 @@ C++ Developed Project Using Raylib
 
 ## Compile
 
-g++ the_invasion.cpp -o the_invasion.exe -I/ucrt64/include -L/ucrt64/lib -lraylib
+g++ the_invasion.cpp game.cpp -o the_invasion.exe -I/ucrt64/include -L/ucrt64/lib -lraylib
 
 ## Controls
 
-Arrow Keys moves the player.
+click with the mouse moves the player.
+Aim with the mouse.
+Shoot with the Key Q.
