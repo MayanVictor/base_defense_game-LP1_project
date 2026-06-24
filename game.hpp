@@ -12,11 +12,12 @@ class Player {
         Vector2 targetposition = position; // Obtém a posição do mouse
         void printPlayerInfo();
         float PlayerSpeed();
+        int Getlife();
         Vector2 getDestiny();
     private: 
-        int life = 100;
+        int life;
         int score = 0;
-        float speed = 2.0f;
+        float speed;
 };
 class Gun {
     public:

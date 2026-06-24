@@ -50,8 +50,10 @@ int main()
         // drawing
         BeginDrawing(); // Start the process of drawing
             ClearBackground(RAYWHITE); // Clear the screen with the color white
-            DrawRectangle(screenwidth / 2 - rectanglewidth /2, screenheight / 2 - rectangleheight / 2, rectanglewidth, rectangleheight, MAROON);
-            DrawRectangle(screenwidth / 2 - (rectanglewidth - 20) /2, screenheight / 2 - (rectangleheight - 20) / 2, rectanglewidth - 20, rectangleheight - 20, WHITE);
+            DrawRectangle(screenwidth / 2 - rectanglewidth /2, screenheight / 2 - rectangleheight / 2, 
+                rectanglewidth, rectangleheight, MAROON);
+            DrawRectangle(screenwidth / 2 - (rectanglewidth - 20) /2,
+             screenheight / 2 - (rectangleheight - 20) / 2, rectanglewidth - 20, rectangleheight - 20, WHITE);
             if (bullet != nullptr){
                 bullet->update();
                 bullet->draw();
