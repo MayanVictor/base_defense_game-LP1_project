@@ -5,27 +5,37 @@
 
 int main()
 {
-    const int screenwidth = 900;
+    const int screenwidth = 960;
     const int screenheight = 600;
     const int rectanglewidth = 300;
     const int rectangleheight = 250;
-    const int ballradius = 30;
+    const int ballradius = 20;
     Player hero;
+    Gun pistol;
+    Bullet* bullet = nullptr;
 
-    InitWindow(screenwidth, screenheight, "Base Defense"); // Cria uma janela com largura 800, altura 600 e título "Base Defense"
+    InitWindow(screenwidth, screenheight, "Base Defense"); // Create a window with 960 widht and 600 height with the title "Base Defense"
     SetTargetFPS(60);
     
 
-    while (!WindowShouldClose()) // Verifica se a janela deve ser fechada (por exemplo, se o usuário clicar no botão de fechar)
+    while (!WindowShouldClose()) // Checks if the window should be closed by the user (for example if they click the X buttom)
     {
         //event handling
         if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             hero.getDestiny();
                
         }
+        if(IsKeyPressed(KEY_Q)) {
+            delete bullet; //create a single bullet and delete if you press Q again (this will be improved soon)
+
+            bullet = new Bullet( 
+                hero.position,
+                GetMousePosition()
+            );
+        }
         
         // updating position
-        Vector2 direction = Vector2Subtract(hero.targetposition, hero.ballposition);
+        Vector2 direction = Vector2Subtract(hero.targetposition, hero.position);
         float velocity = hero.PlayerSpeed();
             float distance = Vector2Length(direction);
 
@@ -33,20 +43,24 @@ int main()
             {
                 direction = Vector2Normalize(direction);
 
-                hero.ballposition.x += direction.x * velocity;
-                hero.ballposition.y += direction.y * velocity;
+                hero.position.x += direction.x * velocity;
+                hero.position.y += direction.y * velocity;
             }
         
         // drawing
-        BeginDrawing(); // Inicia o processo de desenho
-            ClearBackground(RAYWHITE); // Limpa a tela com a cor branca
+        BeginDrawing(); // Start the process of drawing
+            ClearBackground(RAYWHITE); // Clear the screen with the color white
             DrawRectangle(screenwidth / 2 - rectanglewidth /2, screenheight / 2 - rectangleheight / 2, rectanglewidth, rectangleheight, MAROON);
             DrawRectangle(screenwidth / 2 - (rectanglewidth - 20) /2, screenheight / 2 - (rectangleheight - 20) / 2, rectanglewidth - 20, rectangleheight - 20, WHITE);
-            DrawCircleV(hero.ballposition, ballradius, BLUE); // Desenha um círculo preenchido na posição da bola com raio 30 e cor azul
+            if (bullet != nullptr){
+                bullet->update();
+                bullet->draw();
+            }
+            DrawCircleV(hero.position, ballradius, BLUE); // 
             hero.printPlayerInfo();
-        EndDrawing(); // Finaliza o processo de desenho e apresenta o conteúdo na janela
+        EndDrawing(); // Finish the process of drawing
     }
 
-    CloseWindow(); // Fecha a janela e libera os recursos alocados
+    CloseWindow(); // Close the window and free the allocated resouces
     return 0;
 }
