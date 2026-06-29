@@ -32,3 +32,5 @@ Run the executable:
 ./the_invasion.exe
 ```
 
+Or you can add the .vscode paste and then you can press F5 to compile and run the code.
+
