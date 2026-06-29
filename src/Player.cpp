@@ -7,9 +7,10 @@
     ==================    */
 Player::Player() {
     life = 100;
-    score = 0;
+    kills = 0;
 
-    speed = 2.0f;
+    speed = 3.0f;
+    ammo = 100;
 
     alive = true;
 
@@ -30,9 +31,11 @@ void Player::receiveDamage(int amount) {
 void Player::printPlayerInfo() {
     
     std::string lifeText = "life: " + std::to_string(life); 
-    std::string scoreText = "score: " + std::to_string(score);       
+    std::string killsText = "score: " + std::to_string(kills); 
+    std::string ammoText = "ammo: " + std::to_string(ammo);
     DrawText(lifeText.c_str(), 10, 10, 20, DARKGRAY); 
-    DrawText(scoreText.c_str(), 10, 40, 20, DARKGRAY);
+    DrawText(killsText.c_str(), 10, 40, 20, DARKGRAY);
+    DrawText(ammoText.c_str(), 10, 100, 20, DARKGRAY);
 }
 void Player::update() {
     Vector2 direction = Vector2Subtract(targetposition, position);
@@ -56,10 +59,34 @@ void Player::draw() {
     }
     DrawCircleV(position, 20, BLUE);
 }
-bool Player::isAlive() {
-    return alive;
-}
+
 Vector2 Player::getPosition() {
     return position;
 }
+
+void Player::shooting() {
+    if(ammo > 0) {
+        ammo--;
+    } 
+}
+
+void Player::addKill() {
+        kills++;
+}
+
+bool Player::canShoot() {
+    return ammo > 0;
+}
+
+void Player::receiveAmmo(int ammount) {
+    ammo += ammount;
+}
+void Player::receiveHealth(int HP){
+    life += HP;
+}
+
+bool Player::isAlive() {
+    return alive;
+}
+
 

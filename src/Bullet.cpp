@@ -14,10 +14,10 @@ Bullet::Bullet(Vector2 startPosition, Vector2 targetPosition, BulletOwner Owner)
 
     bulletOwner = Owner;
 
-    speed = 5.0f;
+    speed = 8.0f;
 
     distanceTravelled = 0.0f;
-    maxDistance = 500.0f;
+    maxDistance = 800.0f;
 
     active = true;
 }

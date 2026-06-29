@@ -54,6 +54,10 @@ void Base::regenLife() {
         }
     }
 }
+
+void Base::update() {
+    regenLife();
+}
 void Base::printBaseInfo() {
     std::string LifeText = "Base: " + std::to_string(life);
     DrawText(LifeText.c_str(), 10, 70, 20, DARKGRAY);

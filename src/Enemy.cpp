@@ -8,7 +8,7 @@
 Enemy::Enemy(Vector2 startPosition) {
     position = startPosition;
 
-    speed = 0.8f;
+    speed = 1.5f;
     life = 10;
     alive = true;
 }
@@ -43,4 +43,7 @@ bool Enemy::isAlive() {
 }
 Vector2 Enemy::getPosition() {
     return position;
+}
+void Enemy::enemyDestroy() {
+    alive = false;
 }
