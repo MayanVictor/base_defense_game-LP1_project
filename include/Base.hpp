@@ -7,6 +7,7 @@ class Base {
         void receiveDamage(int damage);
         void regenLife();
         void draw();
+        void update();
         Rectangle getRectangle();
         void printBaseInfo();
         

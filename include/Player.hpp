@@ -11,6 +11,11 @@ class Player {
         void draw();
         void printPlayerInfo();
         void update();
+        void shooting();
+        void addKill();
+        bool canShoot();
+        void receiveAmmo(int ammount);
+        void receiveHealth(int HP);
         
         void getDestiny(Vector2 destiny);
         
@@ -19,9 +24,9 @@ class Player {
         Vector2 position = { (float)screenwidth / 2, (float)screenheight / 2} ; // Define a posição inicial da bola no centro da tela
         Vector2 targetposition;
         
-        int life = 100;
-        int score = 0;
-        float speed = 2.0f;
+        int life;
+        int kills;
+        float speed;
         int ammo;
 
         bool alive;
