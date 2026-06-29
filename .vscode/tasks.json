@@ -6,16 +6,22 @@
             "type": "shell",
             "command": "C:/msys64/ucrt64/bin/g++.exe",
             "args": [
-                "the_invasion.cpp",
-                "game.cpp",
+                "src/the_invasion.cpp",
+                "src/Player.cpp",
+                "src/Enemy.cpp",
+                "src/Bullet.cpp",
+                "src/Base.cpp",
+                "src/EnemySpawner.cpp",
+                "src/Items.cpp",
                 "-o",
                 "the_invasion.exe",
+                "-I${workspaceFolder}/include",
                 "-I/ucrt64/include",
                 "-L/ucrt64/lib",
                 "-lraylib"
             ],
             "options": {
-                "cwd": "${fileDirname}",
+                "cwd": "${workspaceFolder}",
                 "env": {
                     "PATH": "C:/msys64/ucrt64/bin;${env:PATH}"
                 }
