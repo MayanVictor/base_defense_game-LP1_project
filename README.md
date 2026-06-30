@@ -7,6 +7,8 @@ This project is a game where you must defend a base against enemies that will sh
 click with the mouse moves the player.
 Aim with the mouse.
 Shoot with the Key Q.
+Pause with the Key P
+Restart with the key R
 
 ## Project Structure
 
