@@ -19,6 +19,7 @@ class Player {
         
         void getDestiny(Vector2 destiny);
         
+        void Respawn();
         bool isAlive();
     private: 
         Vector2 position = { (float)screenwidth / 2, (float)screenheight / 2} ; // Define a posição inicial da bola no centro da tela

@@ -10,7 +10,8 @@ class Base {
         void update();
         Rectangle getRectangle();
         void printBaseInfo();
-        
+
+        bool isDestroyed();
     private:    
         int life;
         int maxLife;
@@ -21,6 +22,6 @@ class Base {
         float regenPercent;
         Rectangle hitBox;
 
-        bool alive;
+        bool destroyed;
 
 };
