@@ -12,7 +12,7 @@ Base::Base(int baseLife) {
 
     hitBox = {screenwidth / 2 - 150, screenheight / 2 - 125, 300, 250};
 
-    alive = true;
+    destroyed = false;
 }
 
 void Base::draw() {
@@ -30,7 +30,7 @@ Rectangle Base::getRectangle() {
 void Base::receiveDamage(int damage) {
     life -= damage;
     if(life <= 0) {
-        alive = false;
+        destroyed = true;
     }
     if(life < 0) {
         life = 0;
@@ -61,4 +61,7 @@ void Base::update() {
 void Base::printBaseInfo() {
     std::string LifeText = "Base: " + std::to_string(life);
     DrawText(LifeText.c_str(), 10, 70, 20, DARKGRAY);
+}
+bool Base::isDestroyed() {
+    return destroyed;
 }

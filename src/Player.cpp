@@ -59,6 +59,13 @@ void Player::draw() {
     }
     DrawCircleV(position, 20, BLUE);
 }
+void Player::Respawn() {
+    alive = true;
+    life = 100;
+
+    position = {(float)screenwidth / 2, (float)screenheight / 2};
+    targetposition = position;
+}
 
 Vector2 Player::getPosition() {
     return position;
