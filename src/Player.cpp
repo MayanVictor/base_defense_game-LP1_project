@@ -11,6 +11,7 @@ Player::Player() {
 
     speed = 3.0f;
     ammo = 100;
+    damage = 10;
 
     alive = true;
 
@@ -53,11 +54,28 @@ void Player::update() {
 void Player::getDestiny(Vector2 destiny) {
     targetposition = destiny;
 }
+void Player::loadTexture()
+{
+    playerSprite = LoadTexture("graphics/survivor_rifle.png");
+}
+void Player::unloadTexture()
+{
+    UnloadTexture(playerSprite);
+}
 void Player::draw() {
     if(!alive) {
         return;
     }
-    DrawCircleV(position, 20, BLUE);
+    Vector2 direction = Vector2Subtract(GetMousePosition(), position);
+    float angle = atan2(direction.y, direction.x) * RAD2DEG;
+
+    Rectangle source = {0, 0, (float)playerSprite.width, (float)playerSprite.height};
+
+    Rectangle dest = {position.x, position.y, 64, 64};
+
+    Vector2 origin = {dest.width / 2, dest.height / 2};
+
+    DrawTexturePro(playerSprite, source, dest, origin, angle + 90, WHITE);
 }
 void Player::Respawn() {
     alive = true;
@@ -69,6 +87,9 @@ void Player::Respawn() {
 
 Vector2 Player::getPosition() {
     return position;
+}
+int Player::getDamage(){
+    return damage;
 }
 
 void Player::shooting() {

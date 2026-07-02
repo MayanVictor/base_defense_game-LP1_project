@@ -15,15 +15,14 @@ Bullet::Bullet(Vector2 startPosition, Vector2 targetPosition, BulletOwner Owner)
     bulletOwner = Owner;
 
     speed = 8.0f;
+    damage = 10;
 
     distanceTravelled = 0.0f;
     maxDistance = 800.0f;
 
     active = true;
 }
-int Bullet::getDamage() {
-    return damage = 10;
-}
+
 BulletOwner Bullet::getOwner()
 {
     return bulletOwner;
@@ -50,6 +49,10 @@ bool Bullet::isActive() {
 }
 Vector2 Bullet::getPosition() {
     return position;
+}
+int Bullet::getDamage() {
+        return damage;
+   
 }
 void Bullet::bulletDestroy() {
     active = false;
