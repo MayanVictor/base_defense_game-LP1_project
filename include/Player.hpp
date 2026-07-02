@@ -18,17 +18,22 @@ class Player {
         void receiveHealth(int HP);
         
         void getDestiny(Vector2 destiny);
+        int getDamage();
         
+        void loadTexture();
+        void unloadTexture();
         void Respawn();
         bool isAlive();
     private: 
         Vector2 position = { (float)screenwidth / 2, (float)screenheight / 2} ; // Define a posição inicial da bola no centro da tela
         Vector2 targetposition;
         
+        int damage;
+        int ammo;
         int life;
         int kills;
         float speed;
-        int ammo;
+        Texture2D playerSprite;
 
         bool alive;
 };

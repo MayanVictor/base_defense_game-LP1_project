@@ -13,6 +13,7 @@ class Bullet {
         Vector2 getPosition();
         void bulletDestroy();
         int getDamage();
+        
         BulletOwner getOwner();
         
         bool isActive();

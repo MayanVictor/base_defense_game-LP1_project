@@ -12,5 +12,8 @@ class EnemySpawner {
     private:
         float spawnTimer;
         float spawnCooldown;
+        float difficultyTimer;
+        float difficultyInterval;
+        float minSpawnCooldown;
         Vector2 getRandomBorderPosition();
 };
